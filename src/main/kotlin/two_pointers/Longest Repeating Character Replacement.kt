@@ -22,8 +22,8 @@ fun characterReplacement(s: String, k: Int): Int {
         maxF = max(maxF, count[s[r]]!!)
 
         while (r - l + 1 - maxF > k) {
-            l++
             count[s[l]] = count[s[l]]!! - 1
+            l++
         }
 
         res = max(res, r - l + 1)
