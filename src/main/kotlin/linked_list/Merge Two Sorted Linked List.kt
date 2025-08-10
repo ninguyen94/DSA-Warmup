@@ -16,34 +16,27 @@ fun main() {
 }
 
 fun mergeTwoLists(list1: ListNode?, list2: ListNode?): ListNode? {
-    if (list1 == null) return list2
-    if (list2 == null) return list1
     var head1 = list1
     var head2 = list2
+    val dummyHead = ListNode(0)
+    var newNote: ListNode? = dummyHead
 
     while (head1 != null && head2 != null) {
+
         if (head1.`val` < head2.`val`) {
-
-            while (head1 != null && head1.next != null && head1.`val` < head2.`val`) {
-                head1 = head1.next
-            }
-
-            val temp = head1?.next
-            head1?.next = head2
-            head2 = head2.next
-            head1 = temp
-
-        } else {
-            while (head2 != null && head2.next != null && head1.`val` > head2.`val`) {
-                head2 = head2.next
-            }
-            val temp = head2?.next
-            head2?.next = head1
+            newNote?.next = head1
             head1 = head1.next
-            head2 = temp
+        } else {
+            newNote?.next = head2
+            head2 = head2.next
         }
+        newNote = newNote?.next
     }
-    return if (list2.`val` < list1.`val`) list1 else list1
+
+    newNote?.next = head1 ?: head2
+
+    return dummyHead.next
+
 }
 
 
