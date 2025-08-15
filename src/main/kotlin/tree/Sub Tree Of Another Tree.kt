@@ -10,12 +10,12 @@ fun isSubtree(root: TreeNode?, subRoot: TreeNode?): Boolean {
     if (subRoot == null) return true
     if (root == null) return false
 
-    if (isSameTree(root, subRoot)) return true
+    if (isSame(root, subRoot)) return true
 
     return isSubtree(root.right, subRoot) || isSubtree(root.left, subRoot)
 }
 
-fun isSameTree(root: TreeNode?, subRoot: TreeNode?): Boolean {
+fun isSame(root: TreeNode?, subRoot: TreeNode?): Boolean {
     if (root == null && subRoot == null) return true
     if (root == null || subRoot == null || root.`val` != subRoot.`val`) return false
     return isSameTree(root.right, subRoot.right) && isSameTree(root.left, subRoot.left)
