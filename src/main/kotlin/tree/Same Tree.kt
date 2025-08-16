@@ -1,8 +1,5 @@
 package tree
 
-import kotlin.math.abs
-import kotlin.math.max
-import kotlin.math.min
 
 /**
 Given the roots of two binary trees p and q, write a function to check if they are the same or not.
