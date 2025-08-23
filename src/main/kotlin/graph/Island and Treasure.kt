@@ -23,6 +23,7 @@ fun islandsAndTreasure(grid: Array<IntArray?>?) {
     val col = grid[0]!!.size
     val res = Array(row) { IntArray(col) }
     val visited = mutableSetOf<Pair<Int, Int>>()
+
     fun dfs(r: Int, c: Int): Int {
         if (r < 0 || c < 0 || r >= row || c >= col || grid[r]!![c] == -1 || visited.contains(r to c)) {
             return -1
