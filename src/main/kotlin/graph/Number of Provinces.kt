@@ -79,7 +79,7 @@ fun findCircleNumWithDSU(isConnected: Array<IntArray>): Int {
     return dsu.connectedCount
 }
 
-class DSU(n: Int) {
+class DSU2(n: Int) {
     val parent = Array(n) { it }
     val size = Array(n) { 1 }
 
