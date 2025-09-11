@@ -1,7 +1,5 @@
 package backtracking
 
-import kotlin.math.ceil
-import kotlin.math.min
 
 /*
 Given an m x n grid of characters board and a string word, return true if word exists in the grid.
